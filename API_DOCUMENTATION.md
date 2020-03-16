@@ -1,9 +1,7 @@
 # Introduction to Relational Databases
 
-// Get response data for 200 / 201
-
 ## Base URL
-http:localhost:5000
+http://localhost:5000
 
 ## Account Routes
 
@@ -29,6 +27,27 @@ URL: /api/actions
 #### Response
 
 ##### 201 (Created)
+```javascript
+{
+  "data": [
+    {
+        "id": 1,
+        "name": "account-01",
+        "budget": 4000
+    },
+    {
+        "id": 2,
+        "name": "account-02",
+        "budget": 206.75
+    },
+    {
+        "id": 3,
+        "name": "New Account",
+        "budget": 6789
+    }
+  ]
+}
+```
 
 ##### 400 (Bad Request)
 > Will receive a 400 response if the name is not unique, or if the name or budget are missing
@@ -62,6 +81,27 @@ URL: /api/actions
 #### Response
 
 ##### 200 (OK)
+```javascript
+{
+  "data": [
+    {
+        "id": 1,
+        "name": "account-01",
+        "budget": 4000
+    },
+    {
+        "id": 2,
+        "name": "account-02",
+        "budget": 206.75
+    },
+    {
+        "id": 3,
+        "name": "account-03",
+        "budget": 6789
+    }
+  ]
+}
+```
 
 ##### 500 (Internal Server Error)
 > Will receive a 500 response if there is an issue with the server
@@ -78,6 +118,17 @@ URL: /api/actions/:id
 #### Response
 
 ##### 200 (OK)
+```javascript
+{
+  "data": [
+    {
+        "id": 1,
+        "name": "account-01",
+        "budget": 4000
+    }
+  ]
+}
+```
 
 ##### 404 (Not Found)
 > Will receive a 404 response if the account ID is invalid
@@ -102,6 +153,22 @@ URL: /api/actions/:id
 #### Response
 
 ##### 200 (OK)
+```javascript
+{
+  "data": [
+    {
+        "id": 1,
+        "name": "account-01",
+        "budget": 4000
+    },
+    {
+        "id": 3,
+        "name": "New Account",
+        "budget": 6789
+    }
+  ]
+}
+```
 
 ##### 404 (Not Found)
 > Will receive a 404 response if the account ID is invalid
@@ -142,6 +209,27 @@ URL: /api/actions/:id
 #### Response
 
 ##### 200 (OK)
+```javascript
+{
+  "data": [
+    {
+        "id": 1,
+        "name": "account-01",
+        "budget": 4000
+    },
+    {
+        "id": 2,
+        "name": "Updated Account Name",
+        "budget": 20675
+    },
+    {
+        "id": 3,
+        "name": "New Account",
+        "budget": 6789
+    }
+  ]
+}
+```
 
 ##### 400 (Bad Request)
 > Will receive a 400 response if the name is not unique, or if the name or budget are missing
