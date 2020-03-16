@@ -26,6 +26,9 @@ server.post('/api/accounts', validateAccount, validateUniqueName, (req, res) => 
 });
 
 server.get('/api/accounts', (req, res) => {
+  const queryParams = req.query;
+  console.log(queryParams);
+
   db('accounts')
     .then(accounts => {
       res.status(200).json({ data: accounts });
