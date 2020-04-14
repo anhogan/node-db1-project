@@ -25,7 +25,7 @@ server.post('/api/accounts', validateAccount, validateUniqueName, (req, res) => 
     });
 });
 
-server.get('/api/accounts', (req, res) => {
+server.get('/api/accounts/', (req, res) => {
   const queryParams = req.query;
   console.log(queryParams);
 
